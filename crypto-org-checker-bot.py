@@ -27,14 +27,14 @@ logger.addHandler(ch)
 track = False
 
 # Constants
-URL = 'https://crossfire.crypto.com/block'
+URL = 'https://mainnet.crypto.org/block'
 VALIDATOR_ADDRESS = ''
 TIME_BETWEEN_CHECKS = 60  # Time in seconds to wait before next check
 CHECKS_TO_FAIL = 5 # Number of consecutive checks that failed before notification
 ADMIN = int(cfg.data['admin']) # Your own user id
 
 try:
-    bot = TelegramClient('crossfire-bot', cfg.data['telegram_api_id'], cfg.data['telegram_api_hash']).start(bot_token=cfg.data['telegram_bot_token'])
+    bot = TelegramClient('crypto-org-checker-bot', cfg.data['telegram_api_id'], cfg.data['telegram_api_hash']).start(bot_token=cfg.data['telegram_bot_token'])
 except:
     logger.error('Error when opening API', exc_info=True)
 
